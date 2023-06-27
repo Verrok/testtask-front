@@ -1,0 +1,45 @@
+
+env:
+  browser: true
+  es2021: true
+extends:
+  - "next/core-web-vitals"
+  - eslint:recommended
+  - plugin:react/recommended
+  - plugin:@typescript-eslint/recommended
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: latest
+  sourceType: module
+plugins:
+  - react
+  - '@typescript-eslint'
+  - 'simple-import-sort'
+  - "unused-imports"
+rules:
+  "@typescript-eslint/no-empty-interface": "off"
+  "react/display-name": "off"
+  "react/react-in-jsx-scope": "off"
+  "@typescript-eslint/no-explicit-any": "off"
+  "@typescript-eslint/no-non-null-assertion": "off"
+  "react/prop-types": "off"
+  quotes: [
+    "warn",
+    "single"
+  ]
+  sort-imports: ["error", {
+    "ignoreCase": true,
+    "memberSyntaxSortOrder": [ "multiple", "single", "none", "all" ],
+    "allowSeparatedGroups": true
+  }]
+  "unused-imports/no-unused-imports": "error"
+  "@typescript-eslint/no-unused-vars": ["warn", {
+    varsIgnorePattern: "_"
+  }]
+
+  object-curly-spacing:
+    - error
+    - always
+  no-multi-spaces: error
